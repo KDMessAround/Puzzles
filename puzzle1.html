@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 1: Crossword</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="puzzle-page">
+    <div class="puzzle-container">
+        <div class="puzzle-header">
+            <h1>Puzzle 1 of 4</h1>
+            <p class="puzzle-subtitle">Complete this crossword to continue your journey</p>
+        </div>
+
+        <div class="crossword-wrapper">
+            <div class="crossword-grid" id="crosswordGrid"></div>
+
+            <div class="clues-panel">
+                <div class="clues-section">
+                    <h3>Across</h3>
+                    <div class="clues-list" id="acrossClues">
+                        <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">[Your clue here]</span></div>
+                    </div>
+                </div>
+                <div class="clues-section">
+                    <h3>Down</h3>
+                    <div class="clues-list" id="downClues">
+                        <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">[Your clue here]</span></div>
+                        <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">[Your clue here]</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2>Congratulations! 🎉</h2>
+            <p>You've completed the first puzzle!</p>
+            <p class="modal-message">Your intelligence and determination never cease to amaze me.</p>
+            <button class="elegant-button" onclick="window.location.href='puzzle2.html'">
+                Continue to Puzzle 2
+            </button>
+        </div>
+    </div>
+
+    <script src="crossword.js"></script>
+</body>
+</html>
