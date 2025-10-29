@@ -28,6 +28,7 @@ const clueNumbers = {
 
 let currentCell = null;
 let currentDirection = 'across';
+let isAutoAdvancing = false; // Track if focus is from auto-advance
 
 // Initialize the crossword grid
 function initializeCrossword() {
@@ -87,7 +88,9 @@ function handleInput(e) {
 
     if (value) {
         validateCell(input);
+        isAutoAdvancing = true; // Set flag before auto-advancing
         moveToNextCell(input);
+        isAutoAdvancing = false; // Reset flag after advancing
     }
 }
 
@@ -211,8 +214,53 @@ function moveInDirection(row, col, rowDelta, colDelta) {
 // Handle cell focus
 function handleFocus(e) {
     const input = e.target;
-    currentCell = input.parentElement;
+    const cell = input.parentElement;
+
+    // If this is from auto-advancing, keep the current direction
+    if (isAutoAdvancing) {
+        input.select();
+        return;
+    }
+
+    const row = parseInt(cell.dataset.row);
+    const col = parseInt(cell.dataset.col);
+    const canGoAcross = hasAcrossWord(row, col);
+    const canGoDown = hasDownWord(row, col);
+
+    // If clicking the same cell again, toggle direction
+    if (cell === currentCell) {
+        if (canGoAcross && canGoDown) {
+            currentDirection = currentDirection === 'across' ? 'down' : 'across';
+        }
+    } else {
+        // New cell - set direction with priority: across first
+        if (canGoAcross && canGoDown) {
+            currentDirection = 'across'; // Prioritize across
+        } else if (canGoDown) {
+            currentDirection = 'down';
+        } else {
+            currentDirection = 'across';
+        }
+        currentCell = cell;
+    }
+
     input.select();
+}
+
+// Check if a cell has an across word
+function hasAcrossWord(row, col) {
+    // Check if there's a cell to the left or right
+    const hasLeft = col > 0 && gridStructure[row][col - 1] !== 0;
+    const hasRight = col < 10 && gridStructure[row][col + 1] !== 0;
+    return hasLeft || hasRight;
+}
+
+// Check if a cell has a down word
+function hasDownWord(row, col) {
+    // Check if there's a cell above or below
+    const hasAbove = row > 0 && gridStructure[row - 1][col] !== 0;
+    const hasBelow = row < 10 && gridStructure[row + 1][col] !== 0;
+    return hasAbove || hasBelow;
 }
 
 // Initialize on page load
