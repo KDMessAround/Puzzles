@@ -343,6 +343,93 @@ body {
     margin-bottom: 30px;
 }
 
+/* === Theme Input === */
+.theme-input {
+    width: 100%;
+    max-width: 200px;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    transition: border-color 0.3s ease;
+}
+
+.theme-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.theme-error {
+    color: var(--error);
+    font-size: 1rem;
+    margin: 10px 0;
+    animation: shake 0.5s ease;
+}
+
+/* === Solved Puzzle View === */
+.solved-container {
+    background: var(--light-bg);
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: 20px;
+    animation: slideUp 0.4s ease;
+}
+
+.solved-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.solved-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.solved-message {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.solved-cell {
+    background: rgba(134, 163, 97, 0.3);
+    cursor: default;
+    border: 1px solid rgba(134, 163, 97, 0.5);
+}
+
+.solved-letter {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    color: var(--white);
+    pointer-events: none;
+}
+
+.solved-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid var(--accent-color);
+}
+
+.solved-footer-message {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
 /* === Placeholder Content === */
 .placeholder-content {
     display: flex;
@@ -442,6 +529,22 @@ body {
         padding: 30px 20px;
         margin: 20px;
     }
+
+    .solved-container {
+        padding: 25px;
+    }
+
+    .solved-header h2 {
+        font-size: 2rem;
+    }
+
+    .solved-message {
+        font-size: 1.1rem;
+    }
+
+    .solved-letter {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -485,6 +588,32 @@ body {
 
     .crossword-grid {
         overflow-x: auto;
+    }
+
+    .theme-input {
+        max-width: 150px;
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+
+    .solved-container {
+        padding: 15px;
+    }
+
+    .solved-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .solved-message {
+        font-size: 1rem;
+    }
+
+    .solved-letter {
+        font-size: 0.95rem;
+    }
+
+    .solved-footer-message {
+        font-size: 1.1rem;
     }
 }
 

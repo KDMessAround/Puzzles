@@ -134,11 +134,86 @@ function checkCompletion() {
     }
 }
 
-// Show success modal
+// Show theme modal instead of success modal
 function showSuccessModal() {
-    const modal = document.getElementById('successModal');
+    const modal = document.getElementById('themeModal');
     modal.style.display = 'flex';
+    // Focus on the input field
+    setTimeout(() => {
+        document.getElementById('themeAnswer').focus();
+    }, 300);
 }
+
+// Check theme answer
+function checkThemeAnswer() {
+    const answer = document.getElementById('themeAnswer').value.trim().toUpperCase();
+    const errorMsg = document.getElementById('themeError');
+
+    if (answer === 'US') {
+        // Correct answer - show solved puzzle
+        document.getElementById('themeModal').style.display = 'none';
+        showSolvedPuzzle();
+    } else {
+        // Wrong answer - show error
+        errorMsg.style.display = 'block';
+        document.getElementById('themeAnswer').value = '';
+        document.getElementById('themeAnswer').focus();
+    }
+}
+
+// Show solved puzzle with real clues
+function showSolvedPuzzle() {
+    const solvedView = document.getElementById('solvedView');
+    solvedView.style.display = 'flex';
+
+    // Create the solved grid with answers visible
+    const solvedGrid = document.getElementById('solvedGrid');
+    solvedGrid.innerHTML = ''; // Clear any existing content
+    solvedGrid.style.gridTemplateColumns = `repeat(11, 1fr)`;
+
+    gridStructure.forEach((row, rowIndex) => {
+        row.forEach((cell, colIndex) => {
+            const cellDiv = document.createElement('div');
+
+            if (cell === 0) {
+                cellDiv.className = 'cell black-cell';
+            } else {
+                cellDiv.className = 'cell solved-cell';
+                cellDiv.dataset.row = rowIndex;
+                cellDiv.dataset.col = colIndex;
+
+                // Add clue number if exists
+                const clueNum = getClueNumber(rowIndex, colIndex);
+                if (clueNum) {
+                    const numSpan = document.createElement('span');
+                    numSpan.className = 'cell-number';
+                    numSpan.textContent = clueNum;
+                    cellDiv.appendChild(numSpan);
+                }
+
+                // Add the letter as plain text (not input)
+                const letterSpan = document.createElement('span');
+                letterSpan.className = 'solved-letter';
+                letterSpan.textContent = cell;
+                cellDiv.appendChild(letterSpan);
+            }
+
+            solvedGrid.appendChild(cellDiv);
+        });
+    });
+}
+
+// Allow Enter key to submit theme answer
+document.addEventListener('DOMContentLoaded', () => {
+    const themeInput = document.getElementById('themeAnswer');
+    if (themeInput) {
+        themeInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkThemeAnswer();
+            }
+        });
+    }
+});
 
 // Handle keyboard navigation
 function handleKeydown(e) {

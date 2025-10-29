@@ -24,7 +24,7 @@
                         <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">An abbreviation for a medical students' organization (4)</span></div>
                         <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">_____ Ha. Gerwig's titular role as a New York dancer (7)</span></div>
                         <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">"Vienna" singer ___ Joel (5)</span></div>
-                        <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">This clue's number (3)</span></div>
+                        <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Half a dozen (3)</span></div>
                         <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">The answer to 6-Across, upside-down (4)</span></div>
                         <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">A color that's also the name of an Ivy League school (5)</span></div>
                     </div>
@@ -42,15 +42,59 @@
         </div>
     </div>
 
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
+    <!-- Theme Answer Modal -->
+    <div id="themeModal" class="modal">
         <div class="modal-content">
-            <h2>Congratulations! 🎉</h2>
-            <p>You've completed the first puzzle!</p>
-            <p class="modal-message">Your intelligence and determination never cease to amaze me.</p>
-            <button class="elegant-button" onclick="window.location.href='puzzle2.html'">
-                Continue to Puzzle 2
-            </button>
+            <h2>Almost There!</h2>
+            <p>Hey love, by now you must have realized the theme of this crossword.</p>
+            <p class="modal-message">What is the theme? (2 letters)</p>
+            <input type="text" id="themeAnswer" maxlength="2" placeholder="Enter answer" class="theme-input">
+            <p id="themeError" class="theme-error" style="display: none;">Not quite, try again!</p>
+            <button class="elegant-button" onclick="checkThemeAnswer()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Solved Puzzle View -->
+    <div id="solvedView" class="modal" style="display: none;">
+        <div class="solved-container">
+            <div class="solved-header">
+                <h2>Congratulations! 🎉</h2>
+                <p class="solved-message">You've unlocked the true meaning behind the puzzle!</p>
+            </div>
+
+            <div class="crossword-wrapper">
+                <div class="crossword-grid" id="solvedGrid"></div>
+
+                <div class="clues-panel">
+                    <div class="clues-section">
+                        <h3>Across</h3>
+                        <div class="clues-list">
+                            <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">The GA where we first met</span></div>
+                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">Your favourite movie (Eventhough they change from time to time :))</span></div>
+                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Angie's partner in crime</span></div>
+                            <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Your Birthday</span></div>
+                            <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">My Birthday</span></div>
+                            <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">Your favourite color and the color that looks best on you.</span></div>
+                        </div>
+                    </div>
+                    <div class="clues-section">
+                        <h3>Down</h3>
+                        <div class="clues-list">
+                            <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">The first movie we watched together</span></div>
+                            <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">Our hangout cafe spot</span></div>
+                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">The brand of the first gift you got me</span></div>
+                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Our first date</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solved-footer">
+                <p class="solved-footer-message">These moments are what make us, US ❤️</p>
+                <button class="elegant-button" onclick="window.location.href='puzzle2.html'">
+                    Continue to Puzzle 2
+                </button>
+            </div>
         </div>
     </div>
 
