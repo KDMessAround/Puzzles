@@ -217,9 +217,17 @@ body {
     animation: correctPulse 0.5s ease;
 }
 
+.cell.correct .cell-number {
+    color: var(--white);
+}
+
 .cell.incorrect {
     background: rgba(201, 96, 94, 0.2);
     animation: shake 0.5s ease;
+}
+
+.cell.incorrect .cell-number {
+    color: var(--white);
 }
 
 @keyframes correctPulse {
@@ -405,6 +413,10 @@ body {
     background: rgba(134, 163, 97, 0.3);
     cursor: default;
     border: 1px solid rgba(134, 163, 97, 0.5);
+}
+
+.solved-cell .cell-number {
+    color: var(--white);
 }
 
 .solved-letter {
