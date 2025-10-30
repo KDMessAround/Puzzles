@@ -1,15 +1,15 @@
 // Answer key for the trivia questions
 const answerKey = {
-    q1: 'B',  // Banker
-    q2: 'C',  // Parasite
-    q3: 'B',  // Christopher Nolan
-    q4: 'B',  // Red
-    q5: 'C',  // Emma Watson
-    q6: ['arendelle'],  // Frozen kingdom
-    q7: ['nakatomi plaza', 'nakatomi'],  // Die Hard building
-    q8: ['box of chocolates', 'a box of chocolates', 'chocolates'],  // Forrest Gump
-    q9: ['titanic', 'rms titanic'],  // Ship name
-    q10: ['mufasa']  // Simba's father
+    q1: 'B',  // William Carlos Williams
+    q2: 'D',  // Luncheon of the Boating Party by Pierre-Auguste Renoir
+    q3: 'C',  // A large quantity of liquid LSD
+    q4: 'B',  // The Denial of Death by Ernest Becker
+    q5: 'A',  // Drencrom
+    q6: 'C',  // Braverman Grant
+    q7: ['binoculars'],  // Moonrise Kingdom
+    q8: ['snoop'],  // Anatomy of a Fall
+    q9: ['halladay'],  // Frances Ha
+    q10: ['orgasmic']  // Movie list name
 };
 
 // Normalize string for comparison (case-insensitive, trim spaces, remove extra spaces)
@@ -47,8 +47,8 @@ function checkAnswers() {
         card.classList.remove('correct', 'incorrect');
     });
 
-    // Check multiple choice questions (1-5)
-    for (let i = 1; i <= 5; i++) {
+    // Check multiple choice questions (1-6)
+    for (let i = 1; i <= 6; i++) {
         const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
         const questionCard = document.querySelector(`[data-question="${i}"]`);
 
@@ -63,8 +63,8 @@ function checkAnswers() {
         }
     }
 
-    // Check short answer questions (6-10)
-    for (let i = 6; i <= 10; i++) {
+    // Check short answer questions (7-10)
+    for (let i = 7; i <= 10; i++) {
         const input = document.getElementById(`q${i}`);
         const questionCard = document.querySelector(`[data-question="${i}"]`);
         const userAnswer = input.value.trim();
