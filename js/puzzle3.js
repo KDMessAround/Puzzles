@@ -85,20 +85,46 @@ function checkPhotoAnswers() {
     }
 }
 
+// Validate single input in real-time
+function validateSingleInput(input) {
+    const photoNum = input.id.replace('answer', '');
+    const photoCard = document.querySelector(`[data-photo="${photoNum}"]`);
+    const photoImage = document.getElementById(`photo${photoNum}`);
+    const userAnswer = input.value.trim();
+
+    // Clear previous states for this card only
+    photoCard.classList.remove('correct', 'incorrect');
+    input.classList.remove('correct-input', 'incorrect-input');
+
+    // Only validate if user has typed something
+    if (userAnswer && checkAnswer(userAnswer, photoAnswers[photoNum])) {
+        photoCard.classList.add('correct');
+        input.classList.add('correct-input');
+        photoImage.classList.remove('blurred');
+        photoImage.classList.add('revealed');
+    }
+}
+
 // Show success modal
 function showSuccessModal() {
     const modal = document.getElementById('photoSuccessModal');
     modal.style.display = 'flex';
 }
 
-// Allow Enter key to submit
+// Allow Enter key to submit and add real-time validation
 document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.photo-answer');
     inputs.forEach(input => {
+        // Enter key to submit
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 checkPhotoAnswers();
             }
+        });
+
+        // Real-time validation as user types
+        input.addEventListener('input', () => {
+            validateSingleInput(input);
         });
     });
 });
