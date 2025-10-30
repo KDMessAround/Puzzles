@@ -442,6 +442,152 @@ body {
     font-style: italic;
 }
 
+/* === Trivia Page === */
+.trivia-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.trivia-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-color);
+    margin: 8px 0;
+}
+
+.trivia-intro p:last-child {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+.trivia-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.question-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.question-card.correct {
+    border-color: var(--success);
+    background: rgba(134, 163, 97, 0.05);
+}
+
+.question-card.incorrect {
+    border-color: var(--error);
+    background: rgba(201, 96, 94, 0.05);
+    animation: shake 0.5s ease;
+}
+
+.question-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.question-text {
+    font-size: 1.15rem;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.option:hover {
+    background: rgba(212, 165, 165, 0.15);
+    border-color: var(--accent-color);
+}
+
+.option input[type="radio"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.option span {
+    font-size: 1.05rem;
+    color: var(--dark-color);
+    flex: 1;
+}
+
+.short-answer {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+    background: var(--light-bg);
+}
+
+.short-answer:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+}
+
+.short-answer.correct-input {
+    border-color: var(--success);
+    background: rgba(134, 163, 97, 0.1);
+}
+
+.short-answer.incorrect-input {
+    border-color: var(--error);
+    background: rgba(201, 96, 94, 0.1);
+}
+
+.trivia-footer {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(201, 96, 94, 0.1);
+    border-radius: 10px;
+    border: 2px solid var(--error);
+}
+
 /* === Placeholder Content === */
 .placeholder-content {
     display: flex;
@@ -537,6 +683,40 @@ body {
         font-size: 1.8rem;
     }
 
+    .trivia-intro {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .trivia-intro p {
+        font-size: 1rem;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .question-number {
+        font-size: 1.2rem;
+    }
+
+    .question-text {
+        font-size: 1.05rem;
+    }
+
+    .option {
+        padding: 12px 15px;
+    }
+
+    .option span {
+        font-size: 1rem;
+    }
+
+    .short-answer {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
     .placeholder-box {
         padding: 30px 20px;
         margin: 20px;
@@ -626,6 +806,50 @@ body {
 
     .solved-footer-message {
         font-size: 1.1rem;
+    }
+
+    .trivia-intro {
+        padding: 15px;
+    }
+
+    .trivia-intro p {
+        font-size: 0.95rem;
+    }
+
+    .question-card {
+        padding: 15px;
+    }
+
+    .question-number {
+        font-size: 1.1rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+
+    .option {
+        padding: 10px 12px;
+    }
+
+    .option input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .option span {
+        font-size: 0.95rem;
+    }
+
+    .short-answer {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        padding: 12px;
     }
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 2</title>
+    <title>Puzzle 2: Movie Trivia</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -11,19 +11,183 @@
     <div class="puzzle-container">
         <div class="puzzle-header">
             <h1>Puzzle 2 of 4</h1>
-            <p class="puzzle-subtitle">The journey continues...</p>
+            <p class="puzzle-subtitle">Movie Trivia Made Just For You</p>
         </div>
 
-        <div class="placeholder-content">
-            <div class="placeholder-box">
-                <h2>Coming Soon</h2>
-                <p>The second puzzle will be revealed here.</p>
-                <p class="placeholder-message">Every challenge brings us closer together.</p>
-                <button class="elegant-button" onclick="window.location.href='puzzle3.html'">
-                    Continue to Puzzle 3 (Temporary)
-                </button>
+        <div class="trivia-intro">
+            <p>The curse of owning the club; you don't get to participate in movie trivias</p>
+            <p>So, my love, I've tailored one especially for you!</p>
+        </div>
+
+        <div class="trivia-container">
+            <!-- Multiple Choice Questions (1-5) -->
+            <div class="question-card" data-question="1" data-type="multiple">
+                <h3 class="question-number">Question 1</h3>
+                <p class="question-text">In "The Shawshank Redemption," what is Andy Dufresne's profession before prison?</p>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q1" value="A">
+                        <span>A) Accountant</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="B">
+                        <span>B) Banker</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="C">
+                        <span>C) Lawyer</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="D">
+                        <span>D) Teacher</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card" data-question="2" data-type="multiple">
+                <h3 class="question-number">Question 2</h3>
+                <p class="question-text">Which film won the Academy Award for Best Picture in 2020?</p>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q2" value="A">
+                        <span>A) 1917</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="B">
+                        <span>B) Joker</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="C">
+                        <span>C) Parasite</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="D">
+                        <span>D) Once Upon a Time in Hollywood</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card" data-question="3" data-type="multiple">
+                <h3 class="question-number">Question 3</h3>
+                <p class="question-text">Who directed the movie "Inception"?</p>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q3" value="A">
+                        <span>A) Steven Spielberg</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="B">
+                        <span>B) Christopher Nolan</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="C">
+                        <span>C) Quentin Tarantino</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="D">
+                        <span>D) James Cameron</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card" data-question="4" data-type="multiple">
+                <h3 class="question-number">Question 4</h3>
+                <p class="question-text">In "The Matrix," what color pill does Neo take?</p>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q4" value="A">
+                        <span>A) Blue</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="B">
+                        <span>B) Red</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="C">
+                        <span>C) Green</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="D">
+                        <span>D) Yellow</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card" data-question="5" data-type="multiple">
+                <h3 class="question-number">Question 5</h3>
+                <p class="question-text">Which actress played Hermione Granger in the Harry Potter films?</p>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q5" value="A">
+                        <span>A) Emma Stone</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="B">
+                        <span>B) Emma Roberts</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="C">
+                        <span>C) Emma Watson</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="D">
+                        <span>D) Emma Thompson</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Short Answer Questions (6-10) -->
+            <div class="question-card" data-question="6" data-type="short">
+                <h3 class="question-number">Question 6</h3>
+                <p class="question-text">What is the name of the kingdom where the 2013 animated movie "Frozen" is set?</p>
+                <input type="text" class="short-answer" id="q6" placeholder="Type your answer here">
+            </div>
+
+            <div class="question-card" data-question="7" data-type="short">
+                <h3 class="question-number">Question 7</h3>
+                <p class="question-text">What is the name of the skyscraper in "Die Hard"?</p>
+                <input type="text" class="short-answer" id="q7" placeholder="Type your answer here">
+            </div>
+
+            <div class="question-card" data-question="8" data-type="short">
+                <h3 class="question-number">Question 8</h3>
+                <p class="question-text">In "Forrest Gump," what does Forrest compare life to?</p>
+                <input type="text" class="short-answer" id="q8" placeholder="Type your answer here">
+            </div>
+
+            <div class="question-card" data-question="9" data-type="short">
+                <h3 class="question-number">Question 9</h3>
+                <p class="question-text">What is the name of the ship in "Titanic"?</p>
+                <input type="text" class="short-answer" id="q9" placeholder="Type your answer here">
+            </div>
+
+            <div class="question-card" data-question="10" data-type="short">
+                <h3 class="question-number">Question 10</h3>
+                <p class="question-text">In "The Lion King," what is the name of Simba's father?</p>
+                <input type="text" class="short-answer" id="q10" placeholder="Type your answer here">
             </div>
         </div>
+
+        <div class="trivia-footer">
+            <p id="errorMessage" class="error-message" style="display: none;">
+                Not quite right on some answers. Try again—you can always ask hubby for hints! ❤️
+            </p>
+            <button class="elegant-button" onclick="checkAnswers()">Submit Answers</button>
+        </div>
     </div>
+
+    <!-- Success Modal -->
+    <div id="triviaSuccessModal" class="modal">
+        <div class="modal-content">
+            <h2>Incredible! 🎬</h2>
+            <p>You've aced the movie trivia!</p>
+            <p class="modal-message">Your love for cinema is just one of the many things that makes you extraordinary.</p>
+            <button class="elegant-button" onclick="window.location.href='puzzle3.html'">
+                Continue to Puzzle 3
+            </button>
+        </div>
+    </div>
+
+    <script src="trivia.js"></script>
 </body>
 </html>
