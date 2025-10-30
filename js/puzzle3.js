@@ -1,10 +1,10 @@
 // Answer key for the photo puzzle
 const photoAnswers = {
-    1: ['first ever picture', 'first picture', 'first photo'],
+    1: ['first picture sent'],
     2: ['first date'],
-    3: ['blue hen date', 'bluehendate', 'blue hen'],
-    4: ['gallery date', 'gallerydate'],
-    5: ['first trip']
+    3: ['blue hen date'],
+    4: ['gallery date'],
+    5: ['arba minch trip']
 };
 
 // Normalize answer for comparison
@@ -16,15 +16,13 @@ function normalizeAnswer(answer) {
         .replace(/[^\w\s]/g, '');  // Remove punctuation
 }
 
-// Check if answer matches any acceptable answers
+// Check if answer matches any acceptable answers (strict matching, case-insensitive)
 function checkAnswer(userAnswer, correctAnswers) {
     const normalized = normalizeAnswer(userAnswer);
 
     return correctAnswers.some(correct => {
         const normalizedCorrect = normalizeAnswer(correct);
-        return normalized === normalizedCorrect ||
-               normalized.includes(normalizedCorrect) ||
-               normalizedCorrect.includes(normalized);
+        return normalized === normalizedCorrect;
     });
 }
 
