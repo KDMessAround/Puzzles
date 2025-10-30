@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 3</title>
+    <title>Puzzle 3: Picture Perfect Memories</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -11,19 +11,91 @@
     <div class="puzzle-container">
         <div class="puzzle-header">
             <h1>Puzzle 3 of 4</h1>
-            <p class="puzzle-subtitle">You're doing amazing!</p>
+            <p class="puzzle-subtitle">Picture Perfect Memories</p>
         </div>
 
-        <div class="placeholder-content">
-            <div class="placeholder-box">
-                <h2>Coming Soon</h2>
-                <p>The third puzzle awaits.</p>
-                <p class="placeholder-message">Your perseverance is one of the many things I love about you.</p>
-                <button class="elegant-button" onclick="window.location.href='puzzle4.html'">
-                    Continue to Puzzle 4 (Temporary)
-                </button>
+        <div class="photo-intro">
+            <p>A picture is worth a thousand words, but these five are worth a lifetime of memories.</p>
+            <p>Can you identify what each photo represents?</p>
+        </div>
+
+        <div class="photo-gallery">
+            <!-- Photo 1 -->
+            <div class="photo-card" data-photo="1">
+                <div class="photo-wrapper">
+                    <img src="1.png" alt="Photo 1" class="photo-image blurred" id="photo1">
+                </div>
+                <div class="photo-question">
+                    <p class="photo-label">What is this picture?</p>
+                    <input type="text" class="photo-answer" id="answer1" placeholder="Type your answer here">
+                </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="photo-card" data-photo="2">
+                <div class="photo-wrapper">
+                    <img src="2.jpg" alt="Photo 2" class="photo-image blurred" id="photo2">
+                </div>
+                <div class="photo-question">
+                    <p class="photo-label">What is this picture?</p>
+                    <input type="text" class="photo-answer" id="answer2" placeholder="Type your answer here">
+                </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="photo-card" data-photo="3">
+                <div class="photo-wrapper">
+                    <img src="3.jpg" alt="Photo 3" class="photo-image blurred" id="photo3">
+                </div>
+                <div class="photo-question">
+                    <p class="photo-label">What is this picture?</p>
+                    <input type="text" class="photo-answer" id="answer3" placeholder="Type your answer here">
+                </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="photo-card" data-photo="4">
+                <div class="photo-wrapper">
+                    <img src="4.jpg" alt="Photo 4" class="photo-image blurred" id="photo4">
+                </div>
+                <div class="photo-question">
+                    <p class="photo-label">What is this picture?</p>
+                    <input type="text" class="photo-answer" id="answer4" placeholder="Type your answer here">
+                </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="photo-card" data-photo="5">
+                <div class="photo-wrapper">
+                    <img src="5.jpg" alt="Photo 5" class="photo-image blurred" id="photo5">
+                </div>
+                <div class="photo-question">
+                    <p class="photo-label">What is this picture?</p>
+                    <input type="text" class="photo-answer" id="answer5" placeholder="Type your answer here">
+                </div>
             </div>
         </div>
+
+        <div class="photo-footer">
+            <p id="photoErrorMessage" class="error-message" style="display: none;">
+                Not quite right on some answers. Take another look at the photos and try again! ❤️
+            </p>
+            <button class="elegant-button" onclick="checkPhotoAnswers()">Submit Answers</button>
+        </div>
     </div>
+
+    <!-- Success Modal -->
+    <div id="photoSuccessModal" class="modal">
+        <div class="modal-content">
+            <h2>Beautiful! 📸</h2>
+            <p>You've identified all our precious memories!</p>
+            <p class="modal-message">Every picture tells our story, and you remember them all perfectly.</p>
+            <button class="elegant-button" onclick="window.location.href='puzzle4.html'">
+                Continue to the Final Puzzle
+            </button>
+        </div>
+    </div>
+
+    <script src="puzzle3.js"></script>
 </body>
 </html>

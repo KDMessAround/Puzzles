@@ -588,6 +588,142 @@ body {
     border: 2px solid var(--error);
 }
 
+/* === Photo Puzzle Page === */
+.photo-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.photo-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-color);
+    margin: 8px 0;
+}
+
+.photo-intro p:last-child {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+.photo-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.photo-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.photo-card.correct {
+    border-color: var(--success);
+    background: rgba(134, 163, 97, 0.05);
+}
+
+.photo-card.incorrect {
+    border-color: var(--error);
+    background: rgba(201, 96, 94, 0.05);
+    animation: shake 0.5s ease;
+}
+
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    background: var(--light-bg);
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.5s ease;
+}
+
+.photo-image.blurred {
+    filter: blur(20px);
+}
+
+.photo-image.revealed {
+    filter: blur(0);
+    animation: unblur 0.8s ease;
+}
+
+@keyframes unblur {
+    from {
+        filter: blur(20px);
+        opacity: 0.7;
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.photo-question {
+    text-align: center;
+}
+
+.photo-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.photo-answer {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.photo-answer:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+}
+
+.photo-answer.correct-input {
+    border-color: var(--success);
+    background: rgba(134, 163, 97, 0.1);
+}
+
+.photo-answer.incorrect-input {
+    border-color: var(--error);
+    background: rgba(201, 96, 94, 0.1);
+}
+
+.photo-footer {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
 /* === Placeholder Content === */
 .placeholder-content {
     display: flex;
@@ -713,6 +849,34 @@ body {
     }
 
     .short-answer {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .photo-intro {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .photo-intro p {
+        font-size: 1rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+
+    .photo-card {
+        padding: 20px;
+    }
+
+    .photo-label {
+        font-size: 1.1rem;
+    }
+
+    .photo-answer {
         font-size: 1rem;
         padding: 12px 15px;
     }
@@ -850,6 +1014,33 @@ body {
     .error-message {
         font-size: 1rem;
         padding: 12px;
+    }
+
+    .photo-intro {
+        padding: 15px;
+    }
+
+    .photo-intro p {
+        font-size: 0.95rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .photo-card {
+        padding: 15px;
+    }
+
+    .photo-label {
+        font-size: 1.05rem;
+    }
+
+    .photo-answer {
+        font-size: 0.95rem;
+        padding: 10px 12px;
     }
 }
 
