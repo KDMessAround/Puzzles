@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 1: Crossword</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
+    <title>Puzzle 1: The Beginning</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -12,42 +12,49 @@
     <div class="puzzle-container">
         <div class="puzzle-header">
             <h1>Puzzle 1 of 4</h1>
-            <p class="puzzle-subtitle">Complete this crossword to continue your journey</p>
+            <p class="puzzle-subtitle">Your Journey Begins With a Riddle</p>
         </div>
 
-        <div class="crossword-wrapper">
-            <div class="crossword-grid" id="crosswordGrid"></div>
+        <div class="final-riddle-section">
+            <div class="final-riddle-intro">
+                <p>Welcome, my love. Your anniversary adventure starts here.</p>
+                <p>Solve this riddle to begin your journey through our memories.</p>
+            </div>
 
-            <div class="clues-panel">
-                <div class="clues-section">
-                    <h3>Across</h3>
-                    <div class="clues-list" id="acrossClues">
-                        <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">An abbreviation for a medical students' organization (4)</span></div>
-                        <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">_____ Ha. Gerwig's titular role as a New York dancer (7)</span></div>
-                        <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">The main herb in pesto sauce (5)</span></div>
-                        <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Half a dozen (3)</span></div>
-                        <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">The answer to 6-Across, upside-down (4)</span></div>
-                        <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">A color that's also the name of an Ivy League school (5)</span></div>
-                    </div>
-                </div>
-                <div class="clues-section">
-                    <h3>Down</h3>
-                    <div class="clues-list" id="downClues">
-                        <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">Synonym: Contenders, Opponents, Rivals (5)</span></div>
-                        <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">Plural: Dwight Schrute's farm crop (5)</span></div>
-                        <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">A find for Ross Geller (6)</span></div>
-                        <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">"Vienna" singer ___ Joel (5)</span></div>
-                    </div>
-                </div>
+            <div class="final-riddle-box">
+                <h3>The First Riddle</h3>
+                <p class="riddle-text">
+                    Where words first sparked at EMSA's door,<br>
+                    Through Frances Ha and Challengers, we found something more.<br>
+                    At BEETS we'd sit with coffee in hand,<br>
+                    Building a world only we understand.<br>
+                    <br>
+                    From first date jitters to trips we'd take,<br>
+                    Every moment together, a choice we'd make.<br>
+                    Brown suits you best, like the earth and the sky,<br>
+                    But the truest color is found in your eye.<br>
+                    <br>
+                    Six and nine, our days came to be,<br>
+                    But the answer I seek has just two letters, you see.<br>
+                    What makes all these memories shine bright and true?<br>
+                    The answer, my love, is simple—it's _____.
+                </p>
+            </div>
+
+            <div class="riddle-answer-section">
+                <label for="finalAnswer">Enter your answer (2 letters):</label>
+                <input type="text" id="finalAnswer" maxlength="2" placeholder="Type here" class="final-answer-input">
+                <p id="finalError" class="error-message" style="display: none;">Not quite. Think about what makes all these memories meaningful...</p>
+                <button class="elegant-button" onclick="checkFinalAnswer()">Submit Answer</button>
             </div>
         </div>
     </div>
 
-    <!-- Riddle Modal -->
-    <div id="themeModal" class="modal">
+    <!-- Success Modal with Riddle -->
+    <div id="finalSuccessModal" class="modal">
         <div class="modal-content">
-            <h2>Congratulations! 🎉</h2>
-            <p class="modal-message">You've completed the crossword!</p>
+            <h2>Correct! 🎉</h2>
+            <p class="modal-message">You've solved the first riddle!</p>
             <p class="modal-message" style="margin-top: 10px; margin-bottom: 10px;">Your first gift awaits at this location:</p>
 
             <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; color: #5a5a5a; margin: 20px 0; text-align: center;">
@@ -60,58 +67,12 @@
             <p class="modal-message" style="margin-top: 10px; margin-bottom: 5px;">Find your gift and the password at this location.</p>
             <p class="modal-message" style="margin-bottom: 10px;">Then return here and enter the password below:</p>
 
-            <input type="text" id="themeAnswer" placeholder="Enter password" class="theme-input">
-            <p id="themeError" class="theme-error" style="display: none;">Not quite, try again!</p>
-            <button class="elegant-button" onclick="checkThemeAnswer()">Submit</button>
+            <input type="text" id="locationPassword" placeholder="Enter password" class="theme-input" style="margin-top: 10px;">
+            <p id="passwordError" class="theme-error" style="display: none;">Not quite, try again!</p>
+            <button class="elegant-button" onclick="checkLocationPassword()">Submit</button>
         </div>
     </div>
 
-    <!-- Solved Puzzle View -->
-    <div id="solvedView" class="modal" style="display: none;">
-        <div class="solved-container">
-            <div class="solved-header">
-                <h2>Congratulations! 🎉</h2>
-                <p class="solved-message">Your smartness never ceases to amaze me. Truly a genius! </p>
-                <p class="solved-message">You've unlocked the true meaning behind the puzzle! </p>
-                <p class="solved-message">I think you already know by now that these words aren't random. Look at the clues again.</p>
-            </div>
-
-            <div class="crossword-wrapper">
-                <div class="crossword-grid" id="solvedGrid"></div>
-
-                <div class="clues-panel">
-                    <div class="clues-section">
-                        <h3>Across</h3>
-                        <div class="clues-list">
-                            <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">The GA where we first met</span></div>
-                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">Your favourite movie (Eventhough they change from time to time :))</span></div>
-                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Angie's partner in crime</span></div>
-                            <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Your Birthday</span></div>
-                            <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">My Birthday</span></div>
-                            <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">Your favourite color and the color that looks best on you.</span></div>
-                        </div>
-                    </div>
-                    <div class="clues-section">
-                        <h3>Down</h3>
-                        <div class="clues-list">
-                            <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">The first movie we watched together</span></div>
-                            <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">Our hangout cafe spot</span></div>
-                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">The brand of the first gift you got me</span></div>
-                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Our first date</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="solved-footer">
-                <p class="solved-footer-message">These are some of the things that make us, US ❤️</p>
-                <button class="elegant-button" onclick="window.location.href='puzzle2.html'">
-                    Continue to Puzzle 2
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/crossword.js"></script>
+    <script src="js/puzzle1.js"></script>
 </body>
 </html>

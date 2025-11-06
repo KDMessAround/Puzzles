@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 4: The Final Challenge</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+    <title>Puzzle 4: The Grand Finale</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -12,16 +12,90 @@
     <div class="puzzle-container">
         <div class="puzzle-header">
             <h1>Puzzle 4 of 4: The Grand Finale</h1>
-            <p class="puzzle-subtitle">Your Final Challenge Awaits</p>
+            <p class="puzzle-subtitle">Complete this crossword to finish your journey</p>
         </div>
 
-        <div class="placeholder-message" style="text-align: center; padding: 60px 20px;">
-            <h2 style="color: var(--gold); margin-bottom: 20px;">Coming Soon...</h2>
-            <p style="font-size: 1.2rem; line-height: 1.8;">
-                This puzzle is being prepared with love.<br>
-                The final challenge will be revealed here.
-            </p>
+        <div class="crossword-wrapper">
+            <div class="crossword-grid" id="crosswordGrid"></div>
+
+            <div class="clues-panel">
+                <div class="clues-section">
+                    <h3>Across</h3>
+                    <div class="clues-list" id="acrossClues">
+                        <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">An abbreviation for a medical students' organization (4)</span></div>
+                        <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">_____ Ha. Gerwig's titular role as a New York dancer (7)</span></div>
+                        <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">The main herb in pesto sauce (5)</span></div>
+                        <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Half a dozen (3)</span></div>
+                        <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">The answer to 6-Across, upside-down (4)</span></div>
+                        <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">A color that's also the name of an Ivy League school (5)</span></div>
+                    </div>
+                </div>
+                <div class="clues-section">
+                    <h3>Down</h3>
+                    <div class="clues-list" id="downClues">
+                        <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">Synonym: Contenders, Opponents, Rivals (5)</span></div>
+                        <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">Plural: Dwight Schrute's farm crop (5)</span></div>
+                        <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">A find for Ross Geller (6)</span></div>
+                        <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">"Vienna" singer ___ Joel (5)</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Solved Puzzle View -->
+    <div id="solvedView" class="modal" style="display: none;">
+        <div class="solved-container">
+            <div class="solved-header">
+                <h2>Congratulations! 🎉</h2>
+                <p class="solved-message">Your smartness never ceases to amaze me. Truly a genius! </p>
+                <p class="solved-message">You've unlocked the true meaning behind the puzzle! </p>
+                <p class="solved-message">I think you already know by now that these words aren't random. Look at the clues again.</p>
+            </div>
+
+            <div class="crossword-wrapper">
+                <div class="crossword-grid" id="solvedGrid"></div>
+
+                <div class="clues-panel">
+                    <div class="clues-section">
+                        <h3>Across</h3>
+                        <div class="clues-list">
+                            <div class="clue-item"><span class="clue-number">1.</span> <span class="clue-text">The GA where we first met</span></div>
+                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">Your favourite movie (Eventhough they change from time to time :))</span></div>
+                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Angie's partner in crime</span></div>
+                            <div class="clue-item"><span class="clue-number">6.</span> <span class="clue-text">Your Birthday</span></div>
+                            <div class="clue-item"><span class="clue-number">7.</span> <span class="clue-text">My Birthday</span></div>
+                            <div class="clue-item"><span class="clue-number">8.</span> <span class="clue-text">Your favourite color and the color that looks best on you.</span></div>
+                        </div>
+                    </div>
+                    <div class="clues-section">
+                        <h3>Down</h3>
+                        <div class="clues-list">
+                            <div class="clue-item"><span class="clue-number">2.</span> <span class="clue-text">The first movie we watched together</span></div>
+                            <div class="clue-item"><span class="clue-number">3.</span> <span class="clue-text">Our hangout cafe spot</span></div>
+                            <div class="clue-item"><span class="clue-number">4.</span> <span class="clue-text">The brand of the first gift you got me</span></div>
+                            <div class="clue-item"><span class="clue-number">5.</span> <span class="clue-text">Our first date</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solved-footer">
+                <p class="solved-footer-message">These are some of the things that make us, US ❤️</p>
+
+                <div style="margin-top: 40px; padding: 30px; background: rgba(134, 163, 97, 0.1); border-radius: 15px; border: 2px solid var(--primary-color);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem;">One Final Gift Awaits...</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">Your last surprise is waiting for you in the <strong style="color: var(--accent-color);">Refrigerator</strong>!</p>
+                    <p style="font-style: italic; color: var(--dark-color);">Go now and claim your final gift.</p>
+                    <p style="margin-top: 30px; font-style: italic; color: var(--accent-color); font-size: 1.1rem;">
+                        Happy Anniversary, my love. ❤️<br>
+                        Thank you for making every day an adventure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/puzzle4.js"></script>
 </body>
 </html>

@@ -1325,3 +1325,104 @@ body {
         transform: scale(1);
     }
 }
+
+
+/* === Final Riddle Puzzle (Puzzle 4) === */
+.final-riddle-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.final-riddle-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.final-riddle-intro p {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.final-riddle-box {
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.final-riddle-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.final-riddle-box .riddle-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--dark-color);
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+}
+
+.riddle-answer-section {
+    text-align: center;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
+}
+
+.riddle-answer-section label {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.final-answer-input {
+    width: 100px;
+    padding: 15px 20px;
+    font-size: 2rem;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+.final-answer-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(134, 163, 97, 0.3);
+}
+
+/* Mobile responsiveness for final riddle */
+@media (max-width: 768px) {
+    .final-riddle-box {
+        padding: 30px 20px;
+    }
+
+    .final-riddle-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .final-riddle-box .riddle-text {
+        font-size: 1rem;
+    }
+
+    .riddle-answer-section {
+        padding: 30px 20px;
+    }
+}

@@ -115,7 +115,7 @@ function checkLocationPassword() {
     const errorMsg = document.getElementById('passwordError');
 
     // Temporary password - user will replace this
-    if (password === 'TEMP3') {
+    if (password === 'CURLYMUFFINS') {
         // Correct password - proceed to next puzzle
         window.location.href = 'puzzle4.html';
     } else {
