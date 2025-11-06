@@ -9,7 +9,7 @@ const answerKey = {
     q7: ['binoculars'],  // Moonrise Kingdom
     q8: ['snoop'],  // Anatomy of a Fall
     q9: ['halladay'],  // Frances Ha
-    q10: ['orgasmic']  // Movie list name
+    q10: ['what i love about', 'what i love about each other', 'what they love about each other']  // Marriage Story lists
 };
 
 // Normalize string for comparison (case-insensitive, trim spaces, remove extra spaces)
