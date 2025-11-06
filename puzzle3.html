@@ -80,15 +80,27 @@
         </div>
     </div>
 
-    <!-- Success Modal -->
+    <!-- Success Modal with Riddle -->
     <div id="photoSuccessModal" class="modal">
         <div class="modal-content">
             <h2>Beautiful! 📸</h2>
             <p>You've identified all our precious memories!</p>
             <p class="modal-message">Every picture tells our story, and you remember them all perfectly.</p>
-            <button class="elegant-button" onclick="window.location.href='puzzle4.html'">
-                Continue to the Final Puzzle
-            </button>
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 10px;">Your next gift awaits at this location:</p>
+
+            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; color: #5a5a5a; margin: 20px 0; text-align: center;">
+                Through me, the world peeks inside,<br>
+                Sunlight streams where curtains glide.<br>
+                A frame for views both far and wide,<br>
+                Look to where the outside meets our inside.
+            </p>
+
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 5px;">Find your gift and the password at this location.</p>
+            <p class="modal-message" style="margin-bottom: 10px;">Then return here and enter the password below:</p>
+
+            <input type="text" id="locationPassword" placeholder="Enter password" class="theme-input" style="margin-top: 10px;">
+            <p id="passwordError" class="theme-error" style="display: none;">Not quite, try again!</p>
+            <button class="elegant-button" onclick="checkLocationPassword()">Submit</button>
         </div>
     </div>
 

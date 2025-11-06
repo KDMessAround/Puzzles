@@ -194,15 +194,27 @@
         </div>
     </div>
 
-    <!-- Success Modal -->
+    <!-- Success Modal with Riddle -->
     <div id="triviaSuccessModal" class="modal">
         <div class="modal-content">
             <h2>Incredible! 🎬</h2>
             <p>You've aced the movie trivia!</p>
             <p class="modal-message">Your love for cinema is just one of the many things that makes you extraordinary.</p>
-            <button class="elegant-button" onclick="window.location.href='puzzle3.html'">
-                Continue to Puzzle 3
-            </button>
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 10px;">Your next gift awaits at this location:</p>
+
+            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; color: #5a5a5a; margin: 20px 0; text-align: center;">
+                A throne of porcelain, humble and small,<br>
+                Where moments of peace come to all.<br>
+                In solitude's room where echoes call,<br>
+                Your next secret awaits within these walls.
+            </p>
+
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 5px;">Find your gift and the password at this location.</p>
+            <p class="modal-message" style="margin-bottom: 10px;">Then return here and enter the password below:</p>
+
+            <input type="text" id="locationPassword" placeholder="Enter password" class="theme-input" style="margin-top: 10px;">
+            <p id="passwordError" class="theme-error" style="display: none;">Not quite, try again!</p>
+            <button class="elegant-button" onclick="checkLocationPassword()">Submit</button>
         </div>
     </div>
 

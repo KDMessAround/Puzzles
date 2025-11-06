@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 4: Treasure Hunt</title>
+    <title>Puzzle 4: The Final Challenge</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -12,159 +12,16 @@
     <div class="puzzle-container">
         <div class="puzzle-header">
             <h1>Puzzle 4 of 4: The Grand Finale</h1>
-            <p class="puzzle-subtitle">A Treasure Hunt Through Our Home</p>
+            <p class="puzzle-subtitle">Your Final Challenge Awaits</p>
         </div>
 
-        <div class="hunt-intro">
-            <p>My love, your final challenge awaits.</p>
-            <p>Follow the riddles to discover hidden treasures throughout our space.</p>
-            <p>Each location holds a password that unlocks the next clue.</p>
-            <p class="emphasis">Your adventure begins now...</p>
-        </div>
-
-        <!-- Progress Tracker -->
-        <div class="progress-tracker">
-            <div class="progress-step active" id="step1-indicator">1</div>
-            <div class="progress-line"></div>
-            <div class="progress-step" id="step2-indicator">2</div>
-            <div class="progress-line"></div>
-            <div class="progress-step" id="step3-indicator">3</div>
-            <div class="progress-line"></div>
-            <div class="progress-step" id="step4-indicator">4</div>
-            <div class="progress-line"></div>
-            <div class="progress-step" id="step5-indicator">5</div>
-        </div>
-
-        <!-- Riddle Container -->
-        <div class="riddle-container">
-            <!-- Step 1: Closet -->
-            <div class="riddle-card active" id="riddle1">
-                <div class="riddle-number">Clue 1 of 5</div>
-                <div class="riddle-content">
-                    <h3>The First Riddle</h3>
-                    <p class="riddle-text">
-                        Where fabrics dance and garments rest,<br>
-                        Behind closed doors, your style expressed.<br>
-                        In this space where memories dress,<br>
-                        Find the word that leads to the next.
-                    </p>
-                </div>
-                <div class="password-input-section">
-                    <label for="password1">Enter the password you found:</label>
-                    <input type="text" id="password1" class="treasure-input" placeholder="Type password here">
-                    <p class="error-text" id="error1" style="display: none;">Not quite right. Check the location again!</p>
-                    <button class="elegant-button" onclick="checkPassword(1)">Submit</button>
-                </div>
-            </div>
-
-            <!-- Step 2: Toilet -->
-            <div class="riddle-card" id="riddle2" style="display: none;">
-                <div class="riddle-number">Clue 2 of 5</div>
-                <div class="riddle-content">
-                    <h3>The Second Riddle</h3>
-                    <p class="riddle-text">
-                        A throne of porcelain, humble and small,<br>
-                        Where moments of peace come to all.<br>
-                        In solitude's room where echoes call,<br>
-                        Your next secret awaits within these walls.
-                    </p>
-                </div>
-                <div class="password-input-section">
-                    <label for="password2">Enter the password you found:</label>
-                    <input type="text" id="password2" class="treasure-input" placeholder="Type password here">
-                    <p class="error-text" id="error2" style="display: none;">Not quite right. Check the location again!</p>
-                    <button class="elegant-button" onclick="checkPassword(2)">Submit</button>
-                </div>
-            </div>
-
-            <!-- Step 3: Windows -->
-            <div class="riddle-card" id="riddle3" style="display: none;">
-                <div class="riddle-number">Clue 3 of 5</div>
-                <div class="riddle-content">
-                    <h3>The Third Riddle</h3>
-                    <p class="riddle-text">
-                        Through me, the world peeks inside,<br>
-                        Sunlight streams where curtains glide.<br>
-                        A frame for views both far and wide,<br>
-                        Look to where the outside meets our inside.
-                    </p>
-                </div>
-                <div class="password-input-section">
-                    <label for="password3">Enter the password you found:</label>
-                    <input type="text" id="password3" class="treasure-input" placeholder="Type password here">
-                    <p class="error-text" id="error3" style="display: none;">Not quite right. Check the location again!</p>
-                    <button class="elegant-button" onclick="checkPassword(3)">Submit</button>
-                </div>
-            </div>
-
-            <!-- Step 4: Table -->
-            <div class="riddle-card" id="riddle4" style="display: none;">
-                <div class="riddle-number">Clue 4 of 5</div>
-                <div class="riddle-content">
-                    <h3>The Fourth Riddle</h3>
-                    <p class="riddle-text">
-                        Where plates gather and stories are shared,<br>
-                        Where meals are savored and hearts are bared.<br>
-                        Four legs standing, memories declared,<br>
-                        The next clue rests where we've always cared.
-                    </p>
-                </div>
-                <div class="password-input-section">
-                    <label for="password4">Enter the password you found:</label>
-                    <input type="text" id="password4" class="treasure-input" placeholder="Type password here">
-                    <p class="error-text" id="error4" style="display: none;">Not quite right. Check the location again!</p>
-                    <button class="elegant-button" onclick="checkPassword(4)">Submit</button>
-                </div>
-            </div>
-
-            <!-- Step 5: Refrigerator (Final) -->
-            <div class="riddle-card" id="riddle5" style="display: none;">
-                <div class="riddle-number">Final Clue</div>
-                <div class="riddle-content">
-                    <h3>The Last Riddle</h3>
-                    <p class="riddle-text">
-                        Where cold preserves what we hold dear,<br>
-                        Where sustenance waits throughout the year.<br>
-                        Behind my door, the answer's clear,<br>
-                        Your final treasure now is near.
-                    </p>
-                </div>
-                <div class="final-instruction">
-                    <p>No password needed this time...</p>
-                    <p class="emphasis">Open the door and claim your gift! 🎁</p>
-                    <button class="elegant-button" onclick="showFinale()">I Found It!</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Success Messages (shown after each correct password) -->
-        <div class="success-message" id="success-msg" style="display: none;">
-            <div class="success-content">
-                <h3>✨ Correct! ✨</h3>
-                <p id="success-text"></p>
-                <button class="elegant-button" onclick="nextRiddle()">Continue</button>
-            </div>
-        </div>
-
-        <!-- Final Success Modal -->
-        <div id="finaleModal" class="modal">
-            <div class="modal-content finale-content">
-                <h2>Congratulations, My Love! 🎉</h2>
-                <p>You've completed all four puzzles and found every treasure.</p>
-                <p class="finale-message">
-                    Just as you followed these clues to find your gifts,<br>
-                    I follow my heart every day that leads me to you.<br>
-                    <br>
-                    Thank you for being my adventure, my home, and my everything.<br>
-                    <br>
-                    Happy Anniversary, my love. Here's to many more puzzles—<br>
-                    and many more years—together. ❤️
-                </p>
-                <p class="signature">All my love, always<br>Your Hubby</p>
-            </div>
+        <div class="placeholder-message" style="text-align: center; padding: 60px 20px;">
+            <h2 style="color: var(--gold); margin-bottom: 20px;">Coming Soon...</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8;">
+                This puzzle is being prepared with love.<br>
+                The final challenge will be revealed here.
+            </p>
         </div>
     </div>
-
-    <script src="js/puzzle4.js"></script>
 </body>
 </html>

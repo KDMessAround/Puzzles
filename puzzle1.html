@@ -43,12 +43,24 @@
         </div>
     </div>
 
-    <!-- Theme Answer Modal -->
+    <!-- Riddle Modal -->
     <div id="themeModal" class="modal">
         <div class="modal-content">
-            <h2>Almost There!</h2>
-            <p class="modal-message">What is the theme of this crossword? (2 letters)</p>
-            <input type="text" id="themeAnswer" maxlength="2" placeholder="Enter answer" class="theme-input">
+            <h2>Congratulations! 🎉</h2>
+            <p class="modal-message">You've completed the crossword!</p>
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 10px;">Your first gift awaits at this location:</p>
+
+            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; color: #5a5a5a; margin: 20px 0; text-align: center;">
+                Where fabrics dance and garments rest,<br>
+                Behind closed doors, your style expressed.<br>
+                In this space where memories dress,<br>
+                Find the word that leads to the next.
+            </p>
+
+            <p class="modal-message" style="margin-top: 10px; margin-bottom: 5px;">Find your gift and the password at this location.</p>
+            <p class="modal-message" style="margin-bottom: 10px;">Then return here and enter the password below:</p>
+
+            <input type="text" id="themeAnswer" placeholder="Enter password" class="theme-input">
             <p id="themeError" class="theme-error" style="display: none;">Not quite, try again!</p>
             <button class="elegant-button" onclick="checkThemeAnswer()">Submit</button>
         </div>

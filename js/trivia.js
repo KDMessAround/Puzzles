@@ -103,6 +103,23 @@ function showSuccessModal() {
     modal.style.display = 'flex';
 }
 
+// Check location password
+function checkLocationPassword() {
+    const password = document.getElementById('locationPassword').value.trim().toUpperCase();
+    const errorMsg = document.getElementById('passwordError');
+
+    // Temporary password - user will replace this
+    if (password === 'ORGASMIC') {
+        // Correct password - proceed to next puzzle
+        window.location.href = 'puzzle3.html';
+    } else {
+        // Wrong password - show error
+        errorMsg.style.display = 'block';
+        document.getElementById('locationPassword').value = '';
+        document.getElementById('locationPassword').focus();
+    }
+}
+
 // Initialize - allow Enter key on short answer inputs to submit
 document.addEventListener('DOMContentLoaded', () => {
     const shortAnswerInputs = document.querySelectorAll('.short-answer');
@@ -113,4 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Allow Enter key on password input
+    const passwordInput = document.getElementById('locationPassword');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkLocationPassword();
+            }
+        });
+    }
 });

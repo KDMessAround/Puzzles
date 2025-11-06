@@ -109,6 +109,23 @@ function showSuccessModal() {
     modal.style.display = 'flex';
 }
 
+// Check location password
+function checkLocationPassword() {
+    const password = document.getElementById('locationPassword').value.trim().toUpperCase();
+    const errorMsg = document.getElementById('passwordError');
+
+    // Temporary password - user will replace this
+    if (password === 'TEMP3') {
+        // Correct password - proceed to next puzzle
+        window.location.href = 'puzzle4.html';
+    } else {
+        // Wrong password - show error
+        errorMsg.style.display = 'block';
+        document.getElementById('locationPassword').value = '';
+        document.getElementById('locationPassword').focus();
+    }
+}
+
 // Allow Enter key to submit and add real-time validation
 document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.photo-answer');
@@ -125,4 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
             validateSingleInput(input);
         });
     });
+
+    // Allow Enter key on password input
+    const passwordInput = document.getElementById('locationPassword');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkLocationPassword();
+            }
+        });
+    }
 });
