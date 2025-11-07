@@ -3,7 +3,7 @@ function checkFinalAnswer() {
     const answer = document.getElementById('finalAnswer').value.trim().toUpperCase();
     const errorMsg = document.getElementById('finalError');
 
-    if (answer === 'US') {
+    if (answer === 'SCRABBLE') {
         // Correct answer - show success modal with CLOSET riddle
         errorMsg.style.display = 'none';
         showSuccessModal();
@@ -26,7 +26,7 @@ function checkLocationPassword() {
     const password = document.getElementById('locationPassword').value.trim().toUpperCase();
     const errorMsg = document.getElementById('passwordError');
 
-    if (password === 'US') {
+    if (password === 'MONOPOLY') {
         // Correct password - proceed to next puzzle
         window.location.href = 'puzzle2.html';
     } else {
